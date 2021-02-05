@@ -1,0 +1,162 @@
+{
+    "Balliol College": {
+        "aliases": ["balliol"],
+        "info_page": "balliol-college",
+        "subdomain": "balliol"
+    },
+    "Brasenose College": {
+        "aliases": ["brasenose"],
+        "info_page": "brasenose-college",
+        "subdomain": "bnc"
+    },
+    "Christ Church": {
+        "aliases": ["chch"],
+        "info_page": "christ-church",
+        "subdomain": "chch"
+    },
+    "Corpus Christi College": {
+        "aliases": ["corpus christi", "corpus"],
+        "info_page": "corpus-christi-college",
+        "subdomain": "ccc"
+    },
+    "Exeter College": {
+        "aliases": ["exeter"],
+        "info_page": "exeter-college",
+        "subdomain": "exeter"
+    },
+    "Harris Manchester College": {
+        "aliases": ["harris manchester", "harris"],
+        "info_page": "harris-manchester-college",
+        "subdomain": "hmc"
+    },
+    "Hertford College": {
+        "aliases": ["hertford"],
+        "info_page": "hertford-college",
+        "subdomain": "hertford"
+    },
+    "Jesus College": {
+        "aliases": ["jesus"],
+        "info_page": "jesus-college",
+        "subdomain": "jesus"
+    },
+    "Keble College": {
+        "aliases": ["keble"],
+        "info_page": "keble-college",
+        "subdomain": "keble"
+    },
+    "Lady Margaret Hall": {
+        "aliases": ["lady margaret"],
+        "info_page": "lady-margaret-hall",
+        "subdomain": "lmh"
+    },
+    "Lincoln College": {
+        "aliases": ["lincoln"],
+        "info_page": "lincoln-college",
+        "subdomain": "lincoln"
+    },
+    "Magdalen College": {
+        "aliases": ["magdalen"],
+        "info_page": "magdalen",
+        "subdomain": "magd"
+    },
+    "Mansfield College": {
+        "aliases": ["mansfield"],
+        "info_page": "mansfield-college",
+        "subdomain": "mansfield"
+    },
+    "Merton College": {
+        "aliases": ["merton"],
+        "info_page": "merton-college",
+        "subdomain": "merton"
+    },
+    "New College": {
+        "aliases": ["new"],
+        "info_page": "new-college",
+        "subdomain": "new"
+    },
+    "Oriel College": {
+        "aliases": ["oriel"],
+        "info_page": "oriel-college",
+        "subdomain": "oriel"
+    },
+    "Pembroke College": {
+        "aliases": ["pembroke"],
+        "info_page": "pembroke-college",
+        "subdomain": "pmb"
+    },
+    "The Queen's College": {
+        "aliases": ["queen's college", "queen's"],
+        "info_page": "queens-college",
+        "subdomain": "queens"
+    },
+    "Regent's Park College": {
+        "aliases": ["regent's park", "regent's"],
+        "info_page": "regents-park-college",
+        "subdomain": "rpc"
+    },
+    "Somerville College": {
+        "aliases": ["somerville"],
+        "info_page": "somerville-college",
+        "subdomain": "some"
+    },
+    "St Anne's College": {
+        "aliases": ["st anne's"],
+        "info_page": "st-annes-college",
+        "subdomain": "st-annes"
+    },
+    "St Benet's Hall": {
+        "aliases": ["st benet's"],
+        "info_page": "st-benets-hall",
+        "subdomain": "st-benets"
+    },
+    "St Catherine's College": {
+        "aliases": ["st catherine's", "catz"],
+        "info_page": "st-catherines-college",
+        "subdomain": "stcatz"
+    },
+    "St Edmund Hall": {
+        "aliases": ["st edmund"],
+        "info_page": "st-edmund-hall",
+        "subdomain": "seh"
+    },
+    "St Hilda's College": {
+        "aliases": ["st hilda's"],
+        "info_page": "st-hildas-college",
+        "subdomain": "st-hildas"
+    },
+    "St Hugh's College": {
+        "aliases": ["st hugh's"],
+        "info_page": "st-hughs-college",
+        "subdomain": "st-hughs"
+    },
+    "St John's College": {
+        "aliases": ["st john's"],
+        "info_page": "st-johns-college",
+        "subdomain": "sjc"
+    },
+    "St Peter's College": {
+        "aliases": ["st peter's"],
+        "info_page": "st-peters-college",
+        "subdomain": "spc"
+    },
+    "Trinity College": {
+        "aliases": ["trinity"],
+        "info_page": "trinity-college",
+        "subdomain": "trinity"
+    },
+    "University College": {
+        "aliases": ["university", "univ"],
+        "info_page": "university-college",
+        "subdomain": "univ"
+    },
+    "Wadham College": {
+        "aliases": ["wadham"],
+        "info_page": "wadham-college",
+        "subdomain": "wadham"
+    },
+    "Worcester College": {
+        "aliases": ["worcester"],
+        "info_page": "worcester-college",
+        "subdomain": "worc"
+    }
+}
