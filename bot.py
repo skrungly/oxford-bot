@@ -18,9 +18,9 @@ async def send_error(ctx: Context, title: str, message: str):
     await ctx.send(embed=embed)
 
 
-@bot.group("college", aliases=["clg"])
-async def college_group(ctx: Context):
-    pass
+@bot.group("college", aliases=["clg"], invoke_without_command=True)
+async def college_group(ctx: Context, *, college_name: str = ""):
+    await college_info(ctx, college_name=college_name)
 
 
 @college_group.command("info", aliases=["summary"])
@@ -48,11 +48,23 @@ async def college_info(ctx: Context, *, college_name: str = ""):
 
     # the remaining set will only contain one item.
     college, = matches
+    students = await college.get_students()
+    founded = await college.get_founded()
+    admissions = await college.get_admissions_contacts()
 
     embed = Embed(
         title=college.name,
         description=await college.get_summary(),
         colour=Colour.green()
+    )
+
+    embed.add_field(name="Students", value=students)
+    embed.add_field(name="Founded", value=founded)
+    embed.add_field(name="Contact Admissions", value=admissions)
+    embed.add_field(
+        name="\u200b",
+        value=f"[Read more...]({college.info_page})",
+        inline=False
     )
 
     await ctx.send(embed=embed)

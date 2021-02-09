@@ -112,6 +112,21 @@ class College:
 
         return content
 
+    async def fetch_from_sidebar(self, heading_text: str):
+        page_content = await self.fetch_info_page()
+        soup = bs4.BeautifulSoup(page_content, "html.parser")
+
+        # the sidebar contains headers followed by the
+        # relevant information. so we just need to look
+        # for h2 or h3 tags followed by p tags for this.
+        sidebar = soup.find("section", {"id": "page-content-sidebar-second"})
+        data = (sidebar
+            .find(["h2", "h3"], text=heading_text)
+            .find_next_sibling("p")
+        )
+
+        return data.text
+
     async def get_summary(self):
         if "summary" in self.cached_info:
             return self.cached_info["summary"]
@@ -123,6 +138,20 @@ class College:
 
         self.cached_info["summary"] = summary
         return summary
+
+    async def get_students(self):
+        data = await self.fetch_from_sidebar("Student numbers")
+        print(data)
+        return data.replace("Graduates", "\nGraduates")
+
+    async def get_founded(self):
+        return await self.fetch_from_sidebar("Founded")
+
+    async def get_admissions_contacts(self):
+        data = await self.fetch_from_sidebar("Admissions contacts")
+        index = data.find("ox.ac.uk")
+        phone, email = data[:index + 8].strip().rsplit("\xa0", 1)
+        return f":telephone: {phone}\n:e_mail: {email}"
 
 
 College.load_colleges_from_json()
