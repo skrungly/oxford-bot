@@ -5,12 +5,12 @@
         "subdomain": "balliol"
     },
     "Brasenose College": {
-        "aliases": ["brasenose"],
+        "aliases": ["brasenose", "actual-worst-college"],
         "info_page": "brasenose-college",
         "subdomain": "bnc"
     },
     "Christ Church": {
-        "aliases": ["chch"],
+        "aliases": ["chch", "the-house"],
         "info_page": "christ-church",
         "subdomain": "chch"
     },
@@ -40,12 +40,12 @@
         "subdomain": "jesus"
     },
     "Keble College": {
-        "aliases": ["keble"],
+        "aliases": ["keble", "lasagna-college"],
         "info_page": "keble-college",
         "subdomain": "keble"
     },
     "Lady Margaret Hall": {
-        "aliases": ["lady margaret"],
+        "aliases": ["lady margaret", "lmh"],
         "info_page": "lady-margaret-hall",
         "subdomain": "lmh"
     },
@@ -100,7 +100,7 @@
         "subdomain": "some"
     },
     "St Anne's College": {
-        "aliases": ["st anne's"],
+        "aliases": ["st anne's", "anne's"],
         "info_page": "st-annes-college",
         "subdomain": "st-annes"
     },
@@ -115,27 +115,27 @@
         "subdomain": "stcatz"
     },
     "St Edmund Hall": {
-        "aliases": ["st edmund"],
+        "aliases": ["st edmund", "teddy-hall"],
         "info_page": "st-edmund-hall",
         "subdomain": "seh"
     },
     "St Hilda's College": {
-        "aliases": ["st hilda's"],
+        "aliases": ["st hilda's", "hilda's"],
         "info_page": "st-hildas-college",
         "subdomain": "st-hildas"
     },
     "St Hugh's College": {
-        "aliases": ["st hugh's"],
+        "aliases": ["st hugh's", "hugh's"],
         "info_page": "st-hughs-college",
         "subdomain": "st-hughs"
     },
     "St John's College": {
-        "aliases": ["st john's"],
+        "aliases": ["st john's", "john's", "sjc"],
         "info_page": "st-johns-college",
         "subdomain": "sjc"
     },
     "St Peter's College": {
-        "aliases": ["st peter's"],
+        "aliases": ["st peter's", "peter's", "spc"],
         "info_page": "st-peters-college",
         "subdomain": "spc"
     },
@@ -155,7 +155,7 @@
         "subdomain": "wadham"
     },
     "Worcester College": {
-        "aliases": ["worcester"],
+        "aliases": ["worcester", "woosta"],
         "info_page": "worcester-college",
         "subdomain": "worc"
     }
