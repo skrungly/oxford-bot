@@ -35,7 +35,6 @@ class College:
             all_data = json.load(json_file)
 
         for college_name, college_data in all_data.items():
-            name = college_name
             aliases = set()
 
             # the aliases, including the full name given by
@@ -133,7 +132,6 @@ class College:
 
         summary = soup.find("meta", {"name": "description"}).get("content")
 
-        self.cached_info["summary"] = summary
         return summary
 
     async def get_students(self):
