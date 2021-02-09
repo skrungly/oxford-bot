@@ -22,7 +22,7 @@ class College:
 
         # this for reusing previously-fetched data to reduce
         # the amount of times we access the oxford website.
-        self.cached_info = {}
+        self.cached_info_page = None
 
     def __str__(self):
         return self.name
@@ -100,15 +100,15 @@ class College:
         return best_match
 
     async def fetch_info_page(self):
-        if "info_page" in self.cached_info:
-            return self.cached_info["info_page"]
+        if self.cached_info_page:
+            return self.cached_info_page
 
         # since we don't have this page cached, fetch it now.
         async with aiohttp.ClientSession() as session:
             async with session.get(self.info_page) as response:
                 response.raise_for_status()  # propagate errors.
                 content = await response.text()
-                self.cached_info["info_page"] = content
+                self.cached_info_page = content
 
         return content
 
@@ -117,7 +117,7 @@ class College:
         soup = bs4.BeautifulSoup(page_content, "html.parser")
 
         # the sidebar contains headers followed by the
-        # relevant information. so we just need to look
+        # relevant information, so we just need to look
         # for h2 or h3 tags followed by p tags for this.
         sidebar = soup.find("section", {"id": "page-content-sidebar-second"})
         data = (sidebar
@@ -128,9 +128,6 @@ class College:
         return data.text
 
     async def get_summary(self):
-        if "summary" in self.cached_info:
-            return self.cached_info["summary"]
-
         page_content = await self.fetch_info_page()
         soup = bs4.BeautifulSoup(page_content, "html.parser")
 
@@ -141,7 +138,9 @@ class College:
 
     async def get_students(self):
         data = await self.fetch_from_sidebar("Student numbers")
-        print(data)
+
+        # this data is read as one line, but we want to
+        # separate the graduates onto a separate line.
         return data.replace("Graduates", "\nGraduates")
 
     async def get_founded(self):
@@ -149,8 +148,13 @@ class College:
 
     async def get_admissions_contacts(self):
         data = await self.fetch_from_sidebar("Admissions contacts")
-        index = data.find("ox.ac.uk")
-        phone, email = data[:index + 8].strip().rsplit("\xa0", 1)
+
+        # some colleges have additional text after the
+        # admissions email (like queen's). we can look
+        # at where the email ends so we can remove any
+        # unnecessary data that appears after it.
+        end_index = data.find("ox.ac.uk")
+        phone, email = data[:end_index + 8].strip().rsplit("\xa0", 1)
         return f":telephone: {phone}\n:e_mail: {email}"
 
 
