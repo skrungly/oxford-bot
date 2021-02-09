@@ -5,12 +5,12 @@
         "subdomain": "balliol"
     },
     "Brasenose College": {
-        "aliases": ["brasenose", "actual-worst-college"],
+        "aliases": ["brasenose", "actual worst college"],
         "info_page": "brasenose-college",
         "subdomain": "bnc"
     },
     "Christ Church": {
-        "aliases": ["chch", "the-house"],
+        "aliases": ["chch", "the house"],
         "info_page": "christ-church",
         "subdomain": "chch"
     },
@@ -40,7 +40,7 @@
         "subdomain": "jesus"
     },
     "Keble College": {
-        "aliases": ["keble", "lasagna-college"],
+        "aliases": ["keble", "lasagna college"],
         "info_page": "keble-college",
         "subdomain": "keble"
     },
@@ -115,7 +115,7 @@
         "subdomain": "stcatz"
     },
     "St Edmund Hall": {
-        "aliases": ["st edmund", "teddy-hall"],
+        "aliases": ["st edmund", "teddy hall"],
         "info_page": "st-edmund-hall",
         "subdomain": "seh"
     },
