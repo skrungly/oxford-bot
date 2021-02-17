@@ -10,6 +10,12 @@ OXFORD_DOMAIN = "https://www.{}.ox.ac.uk/"
 COLLEGE_LISTING = "https://www.ox.ac.uk/admissions/undergraduate/colleges/college-listing/{}"
 
 
+async def get_current_ip():
+    async with aiohttp.ClientSession() as session:
+        async with session.get("https://api.ipify.org/") as response:
+            return await response.text()
+
+
 class College:
 
     _loaded_colleges = []

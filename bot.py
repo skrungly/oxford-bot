@@ -1,9 +1,10 @@
 import os
+import random
 
 from discord import Colour, Embed
 from discord.ext.commands import Bot, Context
 
-from utils import College
+from utils import College, get_current_ip
 
 bot = Bot("ox!")
 
@@ -68,6 +69,45 @@ async def college_info(ctx: Context, *, college_name: str = ""):
     )
 
     await ctx.send(embed=embed)
+
+
+@bot.command()
+async def terraria(ctx: Context):
+    ip_string = await get_current_ip()
+
+    embed = Embed(
+        color=random.choice([0x55cc55, 0x773399, 0x993333, 0x66eeff]),
+        title="Terraria Server!",
+        description=(
+            "The IP address for our spicy fun __master mode__ server changes quite "
+            "frequently. Simply run this command when you need the current IP address! :)"
+        )
+    )
+
+    current_info = (
+        f"IP: {ip_string}\n"
+        "Port: 2021\n"
+        "Password: pogchamp"
+    )
+
+    embed.add_field(name="Join us!", value=current_info)
+    embed.set_footer(text="If it's your first time joining us, please start with a new character!")
+    await ctx.reply(embed=embed)
+
+
+@bot.command(aliases=["mc"])
+async def minecraft(ctx: Context):
+    embed = Embed(
+        color=0x55cc55,
+        title="Minecraft Server!",
+        description=(
+            "Want to play with some fellow Oxford applicants? Come join our casual "
+            "vanilla Minecraft server for version 1.16.5! :)"
+        )
+    )
+
+    embed.add_field(name="Join us!", value="IP Address: 51.83.233.138:25590 **or** oxfordoh.ramshard.net")
+    await ctx.reply(embed=embed)
 
 
 bot.run(os.environ.get("BOT_TOKEN"))
