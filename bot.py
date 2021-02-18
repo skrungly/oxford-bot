@@ -6,7 +6,7 @@ from discord.ext.commands import Bot, Context
 
 from utils import College, get_current_ip
 
-bot = Bot("ox!")
+bot = Bot(("ox!", "Ox!", "OX!", "oX!"), case_insensitive=True)
 
 
 async def send_error(ctx: Context, title: str, message: str):
