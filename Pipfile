@@ -8,6 +8,7 @@ discord = "1.6.0"
 beautifulsoup4 = "4.9.3"
 
 [dev-packages]
+flake8 = "3.9.0"
 
 [requires]
 python_version = "3.9"

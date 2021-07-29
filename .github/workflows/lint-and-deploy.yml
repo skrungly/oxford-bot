@@ -1,0 +1,38 @@
+name: lint and deploy code
+
+on: [push, pull_request]
+
+jobs:
+  lint-code:
+    runs-on: self-hosted
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v2
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: install dependencies
+        run: |
+          pip install pipenv
+          pipenv install --dev --deploy --system
+
+      - name: run flake8
+        run: flake8 --ignore E501
+
+  deploy-bot:
+    runs-on: self-hosted
+    steps:
+      - name: checkout repository again
+        uses: actions/checkout@v2
+
+      - name: build the code and stuff
+        run: docker-compose build
+
+      - name: deploy the code
+        run: docker-compose up -d
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
