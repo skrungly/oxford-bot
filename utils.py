@@ -125,10 +125,7 @@ class College:
         # relevant information, so we just need to look
         # for h2 or h3 tags followed by p tags for this.
         sidebar = soup.find("section", {"id": "page-content-sidebar-second"})
-        data = (sidebar
-            .find(["h2", "h3"], text=heading_text)
-            .find_next_sibling("p")
-        )
+        data = sidebar.find(["h2", "h3"], text=heading_text).find_next_sibling("p")
 
         return data.text
 
